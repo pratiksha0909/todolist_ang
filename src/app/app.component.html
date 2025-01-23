@@ -1,25 +1,24 @@
 
 <h1>Task Manager</h1>
 <div class="container">
-  <img src="assets/logo.png" alt="logo" height="260px">
+  <img src="assets/logo.png" width="400px" height="300px">
   <div class="main">
-    <h2>Manage Your Day To Day Goal And Task</h2>
-    <div id="first">
-    <input (input)="addText($event)" placeholder="Enter Your Task" id="add">
-    <button (click)="addTask()" id="btn">Add Task</button>
-  </div>
- <br>
-    <div *ngFor="let i of tasks; let ind = index" id="delete">
-      {{i}}
-      <img src="assets/delete.png"  height="25px" (click)="deleteTask(ind)">
-
+       <h2>Manage Your Day To Day Goal And Task</h2>
+       <div id="inp">
+       <input (input)="addtext($event)" placeholder="Enter Task" id="add">
+       <button (click)="addTask()" id="btn">Add Task</button>
+  
+       </div>
+       <br>
+        <div *ngFor="let i of tasks; let ind =index" id="task">
+          <input type="checkbox" id="chek" (input)="taskCompleted(ind)">
+       <span> {{i}}</span>
+        <img  src="assets/delete.png" height="30px" id="del" (click)="deleteTask(ind)">
+        </div>
+     <br/>
+       <div class="logo">
+       <img *ngIf="tasks.length===0" src="assets/todo.jpg" height="150px" >
+      </div>
+      
     </div>
-<h1 *ngIf="tasks.length!=0">Completed Task</h1>
-
-  <div id="task">
-    <img *ngIf="tasks.length===0" src="assets/todo.jpg">
-  </div>
-  </div>
 </div>
-
-

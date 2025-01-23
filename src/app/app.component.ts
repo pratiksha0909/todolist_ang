@@ -12,34 +12,40 @@ export class AppComponent {
   title = 'taskmanagment';
   task_text:string=""
   tasks:string[]=[]
+  completed:string[]=[]
 
-/*this function for add text using input in list*/
-  addText(event:any){
+
+  addtext(event:any){
+
     this.task_text=event.target.value
-
   }
-  /*this function for using buttun it will add text in list*/
-
   addTask(){
     if(this.task_text==''){
-      alert("Please Enter a Task")
-
+      alert("Please Enter Task")
     }
     else{
       this.tasks.push(this.task_text)
-
-      /*this for clear the input bx after adding the value*/
-          let v:any=document.getElementById('add')
-          v.value=""
-          this.task_text=""
-
+      let v:any=document.getElementById("add")
+      v.value=""
     }
-
+  
 
   }
   deleteTask(index:any){
+    const audio= new Audio("assets/delete.mp3")
+    audio.play();
     this.tasks.splice(index,1)
 
+  }
+  
+  taskCompleted(index:any){
 
+    const audio = new Audio('assets/delete.mp3')
+    audio.play();
+
+    setTimeout(()=>{
+      this.completed.push(this.tasks[index])  
+      this.tasks.splice(index,1);
+    },500)
   }
 }

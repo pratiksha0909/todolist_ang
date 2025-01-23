@@ -5,4 +5,5 @@ body{
     background-image: linear-gradient(#11998e,#40855b);
     background-repeat: no-repeat;
     font-family: "Playwrite IN", serif;
+    height: 100vh;
 }
