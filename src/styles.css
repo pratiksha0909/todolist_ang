@@ -6,4 +6,6 @@ body{
     background-repeat: no-repeat;
     font-family: "Playwrite IN", serif;
     height: 100vh;
+    margin: 0px;
+    padding: 0px;
 }

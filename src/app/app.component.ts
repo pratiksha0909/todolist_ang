@@ -27,6 +27,7 @@ export class AppComponent {
       this.tasks.push(this.task_text)
       let v:any=document.getElementById("add")
       v.value=""
+      this.task_text=''
     }
   
 
@@ -48,4 +49,10 @@ export class AppComponent {
       this.tasks.splice(index,1);
     },500)
   }
+
+
+
+
+
+
 }

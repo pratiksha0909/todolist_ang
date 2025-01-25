@@ -15,10 +15,11 @@
        <span> {{i}}</span>
         <img  src="assets/delete.png" height="30px" id="del" (click)="deleteTask(ind)">
         </div>
-     <br/>
        <div class="logo">
        <img *ngIf="tasks.length===0" src="assets/todo.jpg" height="150px" >
       </div>
+      <h1 *ngIf="completed.length!=0">Completed Task:</h1>
+        <li *ngFor="let j of completed" style="list-style: none; text-decoration: line-through;">{{j}}</li>
       
     </div>
 </div>
